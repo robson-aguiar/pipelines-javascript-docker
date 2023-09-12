@@ -13,5 +13,5 @@ steps:
   inputs:
     containerRegistry: 'docker-hub'
     repository: '$(imageName)'
-    command: 'build'
+    command: 'buildAndPush'
     Dockerfile: 'app/Dockerfile'
