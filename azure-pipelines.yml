@@ -12,6 +12,6 @@ steps:
   displayName: Build an image
   inputs:
     containerRegistry: 'docker-hub'
-    repository: '$(imageName)'
+    repository: 'dedalussalszbrun/lab'
     command: 'buildAndPush'
     Dockerfile: 'app/Dockerfile'
