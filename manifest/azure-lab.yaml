@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: lab
+  name: lab
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lab
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: lab
+    spec:
+      containers:
+      - image: dedalussalszbrun/lab
+        name: lab
+        ports:
+        - containerPort: 8080
+        resources: {}
+      imagePullSecrets:
+      - name: regcred
+status: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: lab
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 8080
+    targetPort: 8080
+  selector:
+    app: lab
