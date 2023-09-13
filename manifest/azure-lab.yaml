@@ -18,7 +18,7 @@ spec:
         app: lab
     spec:
       containers:
-      - image: dedalussalszbrun/lab
+      - image: __dockerimage__
         name: lab
         ports:
         - containerPort: 8080
