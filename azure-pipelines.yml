@@ -17,6 +17,21 @@ steps:
     Dockerfile: '**/Dockerfile'
     tags: 
   
+- task: replacetokens@5
+  inputs:
+    rootDirectory: '$(System.DefaultWorkingDirectory)/manifest/'
+    targetFiles: 'azure-lab.yaml'
+    encoding: 'auto'
+    tokenPattern: 'rm'
+    writeBOM: true
+    actionOnMissing: 'warn'
+    keepToken: false
+    actionOnNoFiles: 'continue'
+    enableTransforms: false
+    enableRecursion: false
+    useLegacyPattern: false
+    enableTelemetry: true
+ 
 - task: CopyFiles@2
   displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)'
   inputs:
