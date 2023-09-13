@@ -12,7 +12,7 @@ steps:
   displayName: Build an image
   inputs:
     containerRegistry: 'docker-hub'
-    repository: 'dedalussalszbrun/lab'
+    repository: 'robsonaguiarti/kubectl'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
     tags: 
